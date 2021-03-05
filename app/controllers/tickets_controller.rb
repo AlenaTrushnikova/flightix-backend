@@ -6,7 +6,7 @@ KEY = ENV['key']
 MARKER = ENV['marker']
 
 class TicketsController < ApplicationController
-
+  skip_before_action :authorized
   def index
     signature = get_signature(params)
 

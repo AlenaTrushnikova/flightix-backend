@@ -60,3 +60,7 @@ gem 'digest'
 gem 'rack-cors'
 
 gem 'figaro'
+
+gem "jwt", "~> 2.1"
+
+gem "active_model_serializers", "~> 0.10.7"
