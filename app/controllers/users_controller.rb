@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       my_token = encode_token({user_id: user.id})
       render json: {user: UserSerializer.new(user), token: my_token}
     else
-      render json: {error: " must be unique."}
+      render json: {error: "Email must be unique."}
     end
   end
 
