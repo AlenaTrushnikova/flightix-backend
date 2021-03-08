@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_04_193737) do
+ActiveRecord::Schema.define(version: 2021_03_06_001707) do
+
+  create_table "plan", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "departure"
+    t.date "date_of_departure"
+    t.string "arrival"
+    t.date "date_of_return"
+    t.integer "adults"
+    t.integer "infants"
+    t.string "flight_class"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_plans_on_user_id"
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.integer "plan_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plan_id"], name: "index_tickets_on_plan_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"

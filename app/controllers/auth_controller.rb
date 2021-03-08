@@ -10,7 +10,7 @@ class AuthController < ApplicationController
 
       render json: {id: UserSerializer.new(user), token: token}
     else
-      render json: {error: 'That user could not be found'}, status: 401
+      render json: {error: 'Invalid email or password, please Sign Up'}, status: 401
     end
   end
 
