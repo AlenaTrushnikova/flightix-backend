@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_06_001707) do
+ActiveRecord::Schema.define(version: 2021_03_09_001011) do
 
-  create_table "plan", force: :cascade do |t|
+  create_table "plans", force: :cascade do |t|
     t.integer "user_id"
     t.string "departure"
     t.date "date_of_departure"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2021_03_06_001707) do
     t.string "flight_class"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "IATA_to"
+    t.string "IATA_from"
     t.index ["user_id"], name: "index_plans_on_user_id"
   end
 
@@ -30,6 +32,7 @@ ActiveRecord::Schema.define(version: 2021_03_06_001707) do
     t.integer "plan_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price"
     t.index ["plan_id"], name: "index_tickets_on_plan_id"
   end
 

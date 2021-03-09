@@ -23,6 +23,6 @@ class PlansController < ApplicationController
 
   private
   def plan_params
-    params.require(:plan).permit(:user_id,:departure, :date_of_departure, :arrival, :date_of_return, :adults, :infants, :flight_class)
+    params.require(:plan).permit(:user_id,:departure, :date_of_departure, :arrival, :date_of_return, :adults, :infants, :flight_class, :IATA_from, :IATA_to)
   end
 end

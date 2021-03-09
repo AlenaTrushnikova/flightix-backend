@@ -87,7 +87,36 @@ class TicketsController < ApplicationController
     md5.hexdigest
   end
 
-  def process_tickets(params, tickets, currency_rate)
+  def show
+    ticket = Ticket.find_by(id: params[:id])
+    render json: ticket
+  end
 
+  def process_tickets(params, tickets, currency_rate)
+    plans = Plan.where(IATA_from: params[:from],
+                 date_of_departure: params[:dateOfDep],
+                 IATA_to: params[:to],
+                 date_of_return: params[:dateOfReturn],
+                 adults: params[:adults],
+                 infants: params[:infants],
+                 flight_class: params[:flightClass]).all
+
+    if plans == nil
+      return
+    end
+
+    term = tickets[0]['terms'][tickets[0]['terms'].keys[0]]
+    if  term['currency'] != 'usd'
+      price = (term['price'] / currency_rate).round(0)
+    else
+      price = term['price']
+    end
+
+    plans.each do |plan|
+      Ticket.create(
+        plan_id: plan.id,
+        price: price
+      )
+    end
   end
 end
