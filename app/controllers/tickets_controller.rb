@@ -113,7 +113,7 @@ class TicketsController < ApplicationController
     end
 
     plans.each do |plan|
-      Ticket.create(
+      Ticket.find_or_create_by(
         plan_id: plan.id,
         price: price
       )
