@@ -67,12 +67,27 @@ class TicketsController < ApplicationController
 
     proposals = JSON.parse(response_search.body)
     tickets = proposals[0]["proposals"]
-
+    if tickets == nil
+      tickets = []
+    end
     render json: {
       tickets: tickets,
-      currency_rate: currency_rate}
+      currency_rate: currency_rate,
+      search_id: search_id
+    }
 
     process_tickets(params, tickets, currency_rate)
+  end
+
+  def get_view_deal_url
+    uri = URI.parse("http://api.travelpayouts.com/v1/flight_searches/#{params[:search]}/clicks/#{params[:terms]}.json")
+    http_search = Net::HTTP.new(uri.host)
+    request_search = Net::HTTP::Get.new(uri.request_uri)
+    response_search = http_search.request(request_search)
+
+    term = JSON.parse(response_search.body)
+    url = term["url"]
+    render  json: {url: url}
   end
 
   def get_signature(params)
@@ -102,6 +117,10 @@ class TicketsController < ApplicationController
                  flight_class: params[:flightClass]).all
 
     if plans == nil
+      return
+    end
+
+    if tickets.length == 0
       return
     end
 
