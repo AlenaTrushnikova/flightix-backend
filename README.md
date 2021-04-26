@@ -1,24 +1,47 @@
-# README
+## ✈️ Welcome to Flightix
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Flightix is a flight tickets application that searches and offers real-time plane tickets with a purchase option on the airline’s direct website or an online travel agency.
 
-Things you may want to cover:
+### 👉 User Stories
+* As a user you can search for real-time plane tickets
+* As a user you can purchase tickets on the airline’s direct website or an online travel agency
+* As a user you can create and manage trip plans
+* As a user you can see updated ticket prices once they are available
+* As a user you can create/login/delete an account
+* As a user you can log out and login back
 
-* Ruby version
+### 🛠️ Built With
 
-* System dependencies
+* [Rails](https://rubyonrails.org/)
+* [React](https://reactjs.org/)
+* [Redux](https://redux.js.org/)
+* [Bootstrap](https://getbootstrap.com)
 
-* Configuration
 
-* Database creation
+### 🚀 Getting Started
 
-* Database initialization
+To get a local copy up and running follow these simple steps.
 
-* How to run the test suite
+1. Fork and clone [this repo](https://github.com/AlenaTrushnikova/flightix-backend) and the [front-end repo](https://github.com/AlenaTrushnikova/flightix-frontend)
+2. In this repo's directory run bundle install.
+3. Then run `rails s -p 3001`. The server will spin up at localhost:3001
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### ✈️ Screenshots
+![flightix home](https://github.com/AlenaTrushnikova/flightix-frontend/blob/main/src/assets/img/main-page.png)
+![flightix search](https://github.com/AlenaTrushnikova/flightix-frontend/blob/main/src/assets/img/search-page.png)
+![flightix results](https://github.com/AlenaTrushnikova/flightix-frontend/blob/main/src/assets/img/results-page.png)
+![flightix login](https://github.com/AlenaTrushnikova/flightix-frontend/blob/main/src/assets/img/login-page.png)
+![flightix plans](https://github.com/AlenaTrushnikova/flightix-frontend/blob/main/src/assets/img/plans-page.png)
 
-* ...
+### 👥 Contributing
+
+Please follow the [instructions](https://github.com/AlenaTrushnikova/flightix-frontend/blob/main/CONTRIBUTING.md).
+
+### ⭐ Contact
+
+👤 Alena Trushnikova - Github: [@alenatrushnikova](https://github.com/alenatrushnikova)
+
+### ✏️ License
+Copyright © 2021 [Alena Trushnikova](https://github.com/alenatrushnikova)
+This project is [MIT](https://github.com/AlenaTrushnikova/Expenses_Tracker/blob/main/LICENSE) license
