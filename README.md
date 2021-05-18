@@ -33,6 +33,8 @@ To get a local copy up and running follow these simple steps.
 ![flightix results](https://github.com/AlenaTrushnikova/flightix-frontend/blob/main/src/assets/img/results-page.png)
 ![flightix login](https://github.com/AlenaTrushnikova/flightix-frontend/blob/main/src/assets/img/login-page.png)
 ![flightix plans](https://github.com/AlenaTrushnikova/flightix-frontend/blob/main/src/assets/img/plans-page.png)
+![flightix plans](https://github.com/AlenaTrushnikova/flightix-frontend/blob/main/src/assets/img/not-found-page.png)
+
 
 ### 👥 Contributing
 
