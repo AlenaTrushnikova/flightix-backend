@@ -23,7 +23,7 @@
 To get a local copy up and running follow these simple steps.
 
 1. Fork and clone [this repo](https://github.com/AlenaTrushnikova/flightix-backend) and the [front-end repo](https://github.com/AlenaTrushnikova/flightix-frontend)
-2. In this repo's directory run bundle install.
+2. In this repo's directory run `bundle install`.
 3. Then run `rails s -p 3001`. The server will spin up at localhost:3001
 
 
